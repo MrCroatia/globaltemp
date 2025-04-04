@@ -40,7 +40,9 @@ npm run build
 
 ## Deployment to Vercel
 
-This application is designed to be deployed as a static site on Vercel. Follow these steps to deploy:
+This application is designed to be deployed as a static site on Vercel at the domain **weather.fragment42.com**. Follow these steps to deploy:
+
+### Option 1: Using Vercel CLI
 
 1. Create a Vercel account if you don't have one at [vercel.com](https://vercel.com)
 
@@ -59,21 +61,42 @@ npm run build
 4. Deploy to Vercel:
 
 ```sh
-vercel
+vercel --prod
 ```
 
-5. Follow the prompts in the CLI to complete the deployment.
+5. When prompted, confirm that you want to use the settings from the `vercel.json` file.
 
-Alternatively, you can connect your GitHub repository to Vercel for automatic deployments:
+6. After deployment, set up the custom domain:
+
+```sh
+vercel domains add globaltemp weather.fragment42.com
+```
+
+### Option 2: Using Vercel Dashboard (Recommended)
 
 1. Push your code to a GitHub repository
+
 2. Log in to your Vercel account
+
 3. Click "New Project" and import your repository
+
 4. Configure the project settings:
    - Framework Preset: Vue.js
    - Build Command: npm run build
    - Output Directory: dist
-5. Click "Deploy"
+
+5. In the "Environment Variables" section, you can add any environment variables if needed in the future
+
+6. Click "Deploy"
+
+7. After deployment, go to the project settings:
+   - Navigate to the "Domains" section
+   - Add the custom domain: `weather.fragment42.com`
+   - Follow the verification steps to configure the domain
+
+### Automatic Deployments
+
+With the GitHub integration, any push to the main branch will trigger a new deployment automatically. This ensures that your dashboard is always up to date with the latest code changes.
 
 ## Data Source
 

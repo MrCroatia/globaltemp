@@ -1,12 +1,16 @@
 {
   "name": "globaltemp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Global temperature dashboard showing historical temperature anomalies and climate change data",
+  "homepage": "https://weather.fragment42.com",
+  "author": "Fragment42",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@vue-leaflet/vue-leaflet": "^0.10.1",

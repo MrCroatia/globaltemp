@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "globaltemp",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "alias": ["weather.fragment42.com"]
+}
