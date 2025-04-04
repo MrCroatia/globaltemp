@@ -1,0 +1,35 @@
+@import './base.css';
+
+#app {
+  max-width: 100%;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color, #42b983);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--secondary-color, #2c3e50);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
