@@ -102,25 +102,17 @@ With the GitHub integration, any push to the main branch will trigger a new depl
 
 If you encounter a blank screen or JavaScript module loading errors after deployment, try the following steps:
 
-1. Make sure the build completed successfully:
-
-```sh
-npm run build
-```
-
-2. Check that all necessary files were copied to the `dist` directory, including `_headers` and `_redirects`.
-
-3. If you see MIME type errors in the console (e.g., "Failed to load module script: Expected a JavaScript module script but the server responded with a MIME type of 'text/html'"), try redeploying with the following command:
-
-```sh
-vercel --prod
-```
-
-4. If issues persist, you can try clearing the Vercel cache and redeploying:
+1. Clear the Vercel cache and redeploy:
 
 ```sh
 vercel --prod --force
 ```
+
+2. If issues persist, try deploying directly from the Vercel dashboard:
+   - Go to your project in the Vercel dashboard
+   - Navigate to the "Deployments" tab
+   - Click "Redeploy" on your latest deployment
+   - Select "Clear cache and redeploy"
 
 ## Data Source
 

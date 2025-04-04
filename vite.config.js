@@ -6,7 +6,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
   plugins: [
     vue(),
     vueDevTools(),
@@ -15,16 +14,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
-  },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    // Generate manifest.json in the build output
-    manifest: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
-  },
+  }
 })
