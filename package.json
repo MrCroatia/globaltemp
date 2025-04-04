@@ -8,9 +8,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node build.js",
     "preview": "vite preview",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "copy-vercel-config": "node -e \"const fs=require('fs'); try { fs.copyFileSync('public/_headers', 'dist/_headers'); fs.copyFileSync('public/_redirects', 'dist/_redirects'); console.log('Vercel config files copied to dist/'); } catch(err) { console.error(err); }\""
   },
   "dependencies": {
     "@vue-leaflet/vue-leaflet": "^0.10.1",

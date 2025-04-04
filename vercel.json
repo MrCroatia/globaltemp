@@ -11,10 +11,13 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "handle": "filesystem" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*)\.js", "dest": "/$1.js" },
+    { "src": "/(.*)\.css", "dest": "/$1.css" },
+    { "src": "/(.*)\.svg", "dest": "/$1.svg" },
+    { "src": "/(.*)\.ico", "dest": "/$1.ico" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
   "alias": ["weather.fragment42.com"]
 }

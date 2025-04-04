@@ -98,6 +98,30 @@ vercel domains add globaltemp weather.fragment42.com
 
 With the GitHub integration, any push to the main branch will trigger a new deployment automatically. This ensures that your dashboard is always up to date with the latest code changes.
 
+### Troubleshooting Deployment Issues
+
+If you encounter a blank screen or JavaScript module loading errors after deployment, try the following steps:
+
+1. Make sure the build completed successfully:
+
+```sh
+npm run build
+```
+
+2. Check that all necessary files were copied to the `dist` directory, including `_headers` and `_redirects`.
+
+3. If you see MIME type errors in the console (e.g., "Failed to load module script: Expected a JavaScript module script but the server responded with a MIME type of 'text/html'"), try redeploying with the following command:
+
+```sh
+vercel --prod
+```
+
+4. If issues persist, you can try clearing the Vercel cache and redeploying:
+
+```sh
+vercel --prod --force
+```
+
 ## Data Source
 
 The dashboard uses sample data based on the GISTEMP Global Land-Ocean Temperature Index, which shows temperature anomalies relative to the 1951-1980 average. The data is included directly in the application for static deployment.
